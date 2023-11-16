@@ -106,10 +106,10 @@ class Block(eqx.Module):
         self.norm2 = LayerNorm(dim)
 
     def __call__(self, x, key=None):
-        # x = jax.vmap(self.norm1)(x + self.attn(x))
-        # x = jax.vmap(self.norm2)(x + jax.vmap(self.mlp)(x))
-        x = x + self.attn(jax.vmap(self.norm1)(x))
-        x = x + jax.vmap(self.mlp)(jax.vmap(self.norm2)(x))
+        x = x + jax.vmap(self.norm1)(self.attn(x))
+        x = x + jax.vmap(self.norm2)(jax.vmap(self.mlp)(x))
+        # x = x + self.attn(jax.vmap(self.norm1)(x))
+        # x = x + jax.vmap(self.mlp)(jax.vmap(self.norm2)(x))
         return x
 
 
