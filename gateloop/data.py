@@ -10,7 +10,6 @@ def data_iter(path, batch_size, chunk_size):
     n_item = data.size // ss
 
     while True:
-        print("***********************EPOOCH******************")
         for i in range(n_item):
             chunk = data[i * ss : i * ss + ss].reshape(batch_size, chunk_size)
             yield chunk

@@ -28,7 +28,7 @@ class OptimConfig:
 
 
 @dataclass
-class ModelConfig(draccus.PluginRegistry, discover_packages_path="linseq.models"):
+class ModelConfig(draccus.PluginRegistry, discover_packages_path="gateloop.models"):
     seq_len: int = 512
     vocab_size: int = -1  # -1 means automatically determined from tokenizer
 
