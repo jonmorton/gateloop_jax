@@ -1,0 +1,11 @@
+/_train_out
+*.bin
+.DS_Store
+.idea
+.ipynb_checkpoints/
+__pycache__/
+*.bin
+*.pkl
+*.pt
+*.pyc
+/env
