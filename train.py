@@ -6,10 +6,9 @@ import equinox as eqx
 import jax
 import jmp
 import optax
+from gateloop.config import Config
+from gateloop.data import DatasetManager
 from tensorboardX import SummaryWriter
-
-from linseq.config import Config
-from linseq.data import DatasetManager
 
 policy = jmp.Policy(
     param_dtype=jax.numpy.float32,
